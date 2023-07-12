@@ -308,7 +308,7 @@ class Tagger(QtWidgets.QMainWindow, form_class):
             self.images_list.clear()
             for file_name in os.listdir(folder):
                 if file_name.endswith(".jpg") or file_name.endswith(".png") or file_name.endswith(".jpeg"):
-                    pixmap = QPixmap(os.path.join(folder, file_name)).scaled(150, 150, Qt.KeepAspectRatio)
+                    pixmap = QPixmap(os.path.join(folder, file_name)).scaled(150, 150, Qt.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
                     label = QtWidgets.QLabel()
                     label.setPixmap(pixmap)
                     item = QtWidgets.QListWidgetItem(self.images_list)

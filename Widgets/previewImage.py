@@ -11,7 +11,7 @@ class Preview(QtWidgets.QDialog, preview_class):
         pixmap = QPixmap(file_path)
         w = pixmap.width()
         h = pixmap.height()
-        self.label.setPixmap(pixmap.scaled(512, 512, Qt.KeepAspectRatio))
+        self.label.setPixmap(pixmap.scaled(512, 512, Qt.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
         self.label_2.setText(f"{w}x{h}")
         self.show_preview_action.triggered.connect(self.handle_show_preview_action)
         self.move(0,0)
@@ -25,7 +25,7 @@ class Preview(QtWidgets.QDialog, preview_class):
         pixmap = QPixmap(file_path)
         w = pixmap.width()
         h = pixmap.height()
-        self.label.setPixmap(pixmap.scaled(512, 512, Qt.KeepAspectRatio))
+        self.label.setPixmap(pixmap.scaled(512, 512, Qt.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
         self.label_2.setText(f"{w}x{h}")
 
     def close_preview_window(self):
